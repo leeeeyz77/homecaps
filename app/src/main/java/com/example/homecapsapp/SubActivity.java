@@ -25,13 +25,13 @@ public class SubActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub);
 
-        webView = (WebView) webView.findViewById(R.id.cctv);
-        webSettings=webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
+        //webView = (WebView) webView.findViewById(R.id.cctv);
+        //webSettings=webView.getSettings();
+        //webSettings.setJavaScriptEnabled(true);
 
-        webView.loadData("<html><head><style type='text/css'>body{margin:auto auto;text-align:center;}"+
-                "img{width:100%25;}div{overflow:hidden;}</style></head>"+
-                "<body><div><img src=''/></div></body></html>","text/html","UTF-8");
+        // webView.loadData("<html><head><style type='text/css'>body{margin:auto auto;text-align:center;}"+
+        //        "img{width:100%25;}div{overflow:hidden;}</style></head>"+
+        //        "<body><div><img src=''/></div></body></html>","text/html","UTF-8");
 
         callText = (Button)findViewById(R.id.callText);
         callText.setOnClickListener(new View.OnClickListener() {
