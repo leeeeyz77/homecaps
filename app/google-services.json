@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "411260326758",
+    "firebase_url": "https://homecaps-default-rtdb.firebaseio.com",
+    "project_id": "homecaps",
+    "storage_bucket": "homecaps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411260326758:android:95d3cdf4225d3a80246ea7",
+        "android_client_info": {
+          "package_name": "com.example.homecapsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411260326758-9ko1hcrhoiscc69753cnnn5ve91qdfj4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.homecapsapp",
+            "certificate_hash": "d3ef51474d140d4cae6c9f8fa9cd90e8b00b085b"
+          }
+        },
+        {
+          "client_id": "411260326758-sm21nskuftrj5i37n9ck4d3dtqff3hta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHs3jzmUqyNcy1OmqOBiJAbMFIpp27Yg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411260326758-sm21nskuftrj5i37n9ck4d3dtqff3hta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
