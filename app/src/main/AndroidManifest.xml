@@ -24,7 +24,7 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".SubActivity"
+            android:name=".CaptureShowActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

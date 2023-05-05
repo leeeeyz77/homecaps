@@ -30,8 +30,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         Button button1 = findViewById(R.id.btn1);
-        Button button2 = findViewById(R.id.btn2);
+//        Button button2 = findViewById(R.id.btn2);
+        Button button3 = findViewById(R.id.btn3);
 
 
         button1.setOnClickListener(new View.OnClickListener()
@@ -44,16 +46,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button2.setOnClickListener(new View.OnClickListener()
+
+        button3.setOnClickListener(new View.OnClickListener()
         {
-            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onClick(View view)
             {
-                createNotification();
-
+                Intent intent = new Intent(getApplicationContext(),  CaptureShowActivity.class);
+                startActivity(intent);
             }
         });
+
+//        button2.setOnClickListener(new View.OnClickListener()
+//        {
+//            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+//            @Override
+//            public void onClick(View view)
+//            {
+//                createNotification();
+//            }
+//        });
     }
 
     private void createNotification(){
