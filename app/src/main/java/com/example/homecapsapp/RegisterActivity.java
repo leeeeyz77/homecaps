@@ -32,8 +32,8 @@ public class RegisterActivity extends AppCompatActivity {
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("homecaps");
         mEtEmail = findViewById(R.id.et_email);
-        mEtPwd = findViewById(R.id.et_pwd);
-        mBtnRegister = findViewById(R.id.btn_register);
+        mEtPwd = findViewById(R.id.et_password);
+        mBtnRegister = findViewById(R.id.create);
 
         mBtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
