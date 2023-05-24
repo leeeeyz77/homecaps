@@ -3,18 +3,20 @@ package com.example.homecapsapp;
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
-import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 
 import android.content.Intent;
@@ -22,6 +24,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Button button1 = findViewById(R.id.btn1);
-//        Button button2 = findViewById(R.id.btn2);
-        Button button3 = findViewById(R.id.btn3);
+        ImageButton button1 = findViewById(R.id.galleryBtn);
+//
+        ImageButton button2 = findViewById(R.id.callBtn);
 
 
         button1.setOnClickListener(new View.OnClickListener()
@@ -41,19 +44,44 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(MainActivity.this, SubActivity.class);
+                Intent intent = new Intent(MainActivity.this, CaptureShowActivity.class);
                 startActivity(intent);
             }
         });
 
 
-        button3.setOnClickListener(new View.OnClickListener()
-        {
+//        button2.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View view)
+//            {
+//                Intent intent = new Intent(getApplicationContext(),  SubActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
-                Intent intent = new Intent(getApplicationContext(),  CaptureShowActivity.class);
-                startActivity(intent);
+            public void onClick(View view) {
+                androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("신고");
+                builder.setMessage("신고하시겠습니까?");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:112"));
+                        startActivity(intent);
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+
             }
         });
 

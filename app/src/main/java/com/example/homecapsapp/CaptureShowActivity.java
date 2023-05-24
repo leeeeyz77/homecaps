@@ -2,6 +2,8 @@ package com.example.homecapsapp;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Debug;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -12,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.ListResult;
 import com.google.firebase.storage.StorageReference;
 
 public class CaptureShowActivity extends AppCompatActivity {
@@ -26,6 +29,7 @@ public class CaptureShowActivity extends AppCompatActivity {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageReference = storage.getReference();
         StorageReference pathReference = storageReference.child("photo");
+
         if(pathReference==null){
             Toast.makeText(CaptureShowActivity.this, "저장소에 사진이 없습니다.", Toast.LENGTH_SHORT).show();
 
