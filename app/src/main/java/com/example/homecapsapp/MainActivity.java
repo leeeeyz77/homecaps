@@ -23,10 +23,20 @@ import android.content.Intent;
 
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.DownloadListener;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import java.util.zip.Inflater;
+
 public class MainActivity extends AppCompatActivity {
+
+    WebView webview;
+    WebSettings webSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +45,20 @@ public class MainActivity extends AppCompatActivity {
 
 
         ImageButton button1 = findViewById(R.id.galleryBtn);
-//
         ImageButton button2 = findViewById(R.id.callBtn);
+        webview = (WebView)findViewById(R.id.wview);
 
+        webview.setWebViewClient(new WebViewClient());
+        webview.setWebChromeClient(new WebChromeClient());
+        webview.getSettings().setLoadWithOverviewMode(true);
+        webview.getSettings().setUseWideViewPort(true);
+        webview.getSettings().setSupportZoom(false);
+        webview.getSettings().setBuiltInZoomControls(false);
+        webview.getSettings().setJavaScriptEnabled(true);
+        webview.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        webview.getSettings().setDomStorageEnabled(true);
+
+        webview.loadUrl("http://naver.com");
 
         button1.setOnClickListener(new View.OnClickListener()
         {
