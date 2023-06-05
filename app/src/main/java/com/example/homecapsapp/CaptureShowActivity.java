@@ -43,8 +43,7 @@ public class CaptureShowActivity extends AppCompatActivity {
         im14 = (ImageView)findViewById(R.id.iv14);
         im15 = (ImageView)findViewById(R.id.iv15);
 
-
-
+        getSupportActionBar().setTitle("firebase");
 
         //액티비티에서 사용할 이미지 뷰
 //        FirebaseStorage storage = FirebaseStorage.getInstance();

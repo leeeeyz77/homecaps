@@ -119,8 +119,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void createNotification(){
 
-        Intent intent = new Intent(getApplicationContext(), SubActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,intent, PendingIntent.FLAG_IMMUTABLE);
+        //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        //PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,intent, PendingIntent.FLAG_IMMUTABLE);
 
         NotificationCompat.Builder builder =  new NotificationCompat.Builder(this, "default");
         builder.setSmallIcon(R.mipmap.ic_launcher);
@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setContentText("누군가가 감지되었습니다");
         builder.setColor(Color.RED);
         builder.setAutoCancel(true);
-        builder.setContentIntent(pendingIntent);
+        //builder.setContentIntent(pendingIntent);
         builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
         NotificationManager notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
