@@ -43,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent serviceIntent = new Intent(this, MyService.class);
+        startService(serviceIntent);
+
+
 
         ImageButton button1 = findViewById(R.id.galleryBtn);
         ImageButton button2 = findViewById(R.id.callBtn);
@@ -119,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void createNotification(){
 
-        //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        //PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,intent, PendingIntent.FLAG_IMMUTABLE);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,intent, PendingIntent.FLAG_IMMUTABLE);
 
         NotificationCompat.Builder builder =  new NotificationCompat.Builder(this, "default");
         builder.setSmallIcon(R.mipmap.ic_launcher);

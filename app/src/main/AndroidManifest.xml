@@ -12,9 +12,14 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Homecapsapp"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true"></service>
+
         <activity
             android:name=".dialogActivity"
             android:exported="false" />
@@ -33,10 +38,9 @@
         <activity
             android:name=".CaptureShowActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>
