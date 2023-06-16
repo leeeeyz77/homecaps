@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         webview.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
         webview.getSettings().setDomStorageEnabled(true);
 
-        webview.loadUrl("http://naver.com");
+        webview.loadUrl("192.168.0.33:8081");
 
         button1.setOnClickListener(new View.OnClickListener()
         {
